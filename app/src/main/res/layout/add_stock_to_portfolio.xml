@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/com_facebook_button_background_color_focused">
+
+    <TextView
+        android:id="@+id/symbolTxtUpdate"
+        android:layout_width="86dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="symbol"
+        app:layout_constraintBaseline_toBaselineOf="@+id/symbolFieldUpdate"
+        app:layout_constraintStart_toEndOf="@+id/symbolFieldUpdate" />
+
+    <TextView
+        android:id="@+id/priceTxt"
+        android:layout_width="75dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="price"
+        app:layout_constraintBaseline_toBaselineOf="@+id/priceFieldUpdate"
+        app:layout_constraintStart_toEndOf="@+id/priceFieldUpdate" />
+
+    <TextView
+        android:id="@+id/num_of_stocksTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="num_of_stocks"
+        app:layout_constraintBaseline_toBaselineOf="@+id/num_of_stocksField_Update"
+        app:layout_constraintStart_toEndOf="@+id/num_of_stocksField_Update" />
+
+    <EditText
+        android:id="@+id/symbolFieldUpdate"
+        android:layout_width="126dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/priceFieldUpdate"
+        android:layout_width="128dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/symbolFieldUpdate" />
+
+    <EditText
+        android:id="@+id/num_of_stocksField_Update"
+        android:layout_width="127dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceFieldUpdate" />
+
+    <Button
+        android:id="@+id/addNewStockbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="New Stock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/num_of_stocksField_Update" />
+
+</android.support.constraint.ConstraintLayout>

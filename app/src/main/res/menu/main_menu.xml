@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/main_acitvity"
+        android:title="Stocks" />
+
+
+    <item
+        android:id="@+id/portfolio_activity"
+        android:title="My Portfolio" />
+
+    <item
+        android:id="@+id/logout"
+        android:title="Log Out" />
+</menu>
