@@ -18,7 +18,7 @@ public class AddStockToPortfolio extends AppCompatActivity {
 
    DataBaseHelper myDbHelper;
 
-    private Button popButton;
+    private Button addStockButton;
     private EditText symbolText;
     private EditText priceText;
     private EditText numOfStocksText;
@@ -43,21 +43,23 @@ public class AddStockToPortfolio extends AppCompatActivity {
 
         myDbHelper = new DataBaseHelper(this);
 
-        popButton = findViewById(R.id.addNewStockbtn);
+        addStockButton = findViewById(R.id.addNewStockbtn);
 
         symbolText = findViewById(R.id.symbolFieldUpdate);
         priceText = findViewById(R.id.priceFieldUpdate);
         numOfStocksText = findViewById(R.id.num_of_stocksField_Update);
 
-        popButton.setOnClickListener(new View.OnClickListener() {
+        addStockButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 boolean isInserted = myDbHelper.insertData(symbolText.getText().toString(),
                         priceText.getText().toString(),numOfStocksText.getText().toString());
 
                 if (isInserted=true){
 
                     Toast.makeText(AddStockToPortfolio.this,"Stock added to your Portfolio",Toast.LENGTH_LONG).show();
+                    finish();
                     startActivity(new Intent(AddStockToPortfolio.this,PortfolioActivity.class));
                 }
                 else

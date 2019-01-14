@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Locale;
 
 public class StockAdapter extends ArrayAdapter {
     private static final String TAG = "PostAdapter";
@@ -50,7 +51,10 @@ public class StockAdapter extends ArrayAdapter {
 
         Stock stock = stocks.get(position);
         symbol.setText(stock.getSymbol());
-        price.setText(stock.getPrice());
+
+        float pricef = Float.parseFloat(stock.getPrice());
+        price.setText(String.format(Locale.US,"%.2f",pricef));
+
         change.setText(stock.getChange());
 
         return view;

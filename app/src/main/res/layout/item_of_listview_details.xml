@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/openF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="open"
+        app:layout_constraintStart_toStartOf="@+id/symbolF"
+        app:layout_constraintTop_toBottomOf="@+id/symbolF" />
+
+    <TextView
+        android:id="@+id/symbolF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="symbol"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/highF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="high"
+        app:layout_constraintStart_toStartOf="@+id/openF"
+        app:layout_constraintTop_toBottomOf="@+id/openF" />
+
+    <TextView
+        android:id="@+id/lowF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="low"
+        app:layout_constraintStart_toStartOf="@+id/highF"
+        app:layout_constraintTop_toBottomOf="@+id/highF" />
+
+    <TextView
+        android:id="@+id/priceF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="price"
+        app:layout_constraintStart_toStartOf="@+id/lowF"
+        app:layout_constraintTop_toBottomOf="@+id/lowF" />
+
+    <TextView
+        android:id="@+id/changeF"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
+        android:text="change"
+        app:layout_constraintStart_toStartOf="@+id/prevclosF"
+        app:layout_constraintTop_toBottomOf="@+id/prevclosF" />
+
+    <TextView
+        android:id="@+id/latesttradingF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="latest trading day"
+        app:layout_constraintStart_toStartOf="@+id/volumeF"
+        app:layout_constraintTop_toBottomOf="@+id/volumeF" />
+
+    <TextView
+        android:id="@+id/volumeF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="volume"
+        app:layout_constraintStart_toStartOf="@+id/priceF"
+        app:layout_constraintTop_toBottomOf="@+id/priceF" />
+
+    <TextView
+        android:id="@+id/changepercF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="change percent"
+        app:layout_constraintStart_toStartOf="@+id/changeF"
+        app:layout_constraintTop_toBottomOf="@+id/changeF" />
+
+    <TextView
+        android:id="@+id/prevclosF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="prev close"
+        app:layout_constraintStart_toStartOf="@+id/latesttradingF"
+        app:layout_constraintTop_toBottomOf="@+id/latesttradingF" />
+
+    <TextView
+        android:id="@+id/open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/symboF"
+        app:layout_constraintTop_toBottomOf="@+id/symboF" />
+
+    <TextView
+        android:id="@+id/symboF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="180dp"
+        android:layout_marginRight="180dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/symbolF"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/high"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/open"
+        app:layout_constraintTop_toBottomOf="@+id/open" />
+
+    <TextView
+        android:id="@+id/low"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/high"
+        app:layout_constraintTop_toBottomOf="@+id/high" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/low"
+        app:layout_constraintTop_toBottomOf="@+id/low" />
+
+    <TextView
+        android:id="@+id/change"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/prevclose"
+        app:layout_constraintTop_toBottomOf="@+id/prevclose" />
+
+    <TextView
+        android:id="@+id/latesttrading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/volume"
+        app:layout_constraintTop_toBottomOf="@+id/volume" />
+
+    <TextView
+        android:id="@+id/volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/price"
+        app:layout_constraintTop_toBottomOf="@+id/price" />
+
+    <TextView
+        android:id="@+id/changeperc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/change"
+        app:layout_constraintTop_toBottomOf="@+id/change" />
+
+    <TextView
+        android:id="@+id/prevclose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/latesttrading"
+        app:layout_constraintTop_toBottomOf="@+id/latesttrading" />
+
+    <Button
+        android:id="@+id/backbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Go back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

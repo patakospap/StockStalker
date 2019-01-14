@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import static android.icu.text.MessagePattern.ArgType.SELECT;
 
 
 public class DataBaseHelper extends SQLiteOpenHelper {
@@ -18,6 +19,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String COL_4 = "NUM_OF_STOCKS";
 
 
+
     public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
 
@@ -25,7 +27,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT,SYMBOL TEXT,PRICE INTEGER,NUM_OF_STOCKS INTEGER)");
+        db.execSQL("create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, SYMBOL TEXT UNIQUE ,PRICE INTEGER,NUM_OF_STOCKS INTEGER)");
 
     }
 
@@ -47,13 +49,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean insertData(String symbol, String price, String numOfStocks) {
+
         SQLiteDatabase db = this.getWritableDatabase();
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, symbol);
         contentValues.put(COL_3, price);
         contentValues.put(COL_4, numOfStocks);
 
-        long result = db.insert(TABLE_NAME, null, contentValues);
+        long  result = db.insert(TABLE_NAME, null, contentValues);
 
         if (result == -1)
             return false;

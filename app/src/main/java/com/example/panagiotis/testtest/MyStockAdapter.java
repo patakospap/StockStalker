@@ -1,15 +1,19 @@
 package com.example.panagiotis.testtest;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.List;
+import java.util.Locale;
 
 import static com.example.panagiotis.testtest.MainActivity.stocks;
 
@@ -52,13 +56,25 @@ public class MyStockAdapter extends ArrayAdapter {
         TextView gainLoss = view.findViewById(R.id.gainOrLosstxt);
 
         MyStock mystock = myPortfstocks.get(position);
-        float GainOrLoss = mystock.getGainOrLoss(stocks);
+        double GainOrLoss = mystock.getGainOrLoss(stocks);
 
 
         symbol.setText(mystock.getSymbol());
         price.setText(mystock.getPrice());
         numOfStocks.setText(mystock.getNumOfStocks());
-        gainLoss.setText(String.valueOf(GainOrLoss));
+
+        if (GainOrLoss<0){
+         gainLoss.setTextColor(Color.RED);
+         gainLoss.setText(String.format(Locale.US,"%.2f",GainOrLoss));
+
+        }
+        else{
+            gainLoss.setTextColor(Color.GREEN);
+            //gainLoss.setText(String.valueOf(GainOrLoss));
+            gainLoss.setText(String.format(Locale.US,"%.2f",GainOrLoss));
+
+        }
+
 
         return view;
     }

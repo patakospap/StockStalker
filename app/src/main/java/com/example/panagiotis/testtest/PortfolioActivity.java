@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ public class PortfolioActivity extends AppCompatActivity {
         newStockbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 startActivity(new Intent(PortfolioActivity.this, AddStockToPortfolio.class));
             }
         });
@@ -153,6 +155,7 @@ public class PortfolioActivity extends AppCompatActivity {
                 return true;
             case R.id.portfolio_activity:
                 Toast.makeText(PortfolioActivity.this, "You are already watching your portfolio", Toast.LENGTH_SHORT).show();
+                return true;
             case R.id.logout:
                 showLogoutMessage("Logout","Are you sure you want to Logout??");
                 return true;
@@ -179,8 +182,9 @@ public class PortfolioActivity extends AppCompatActivity {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                finish();
-                LoginManager.getInstance().logOut();
+               /* finish();
+                LoginManager.getInstance().logOut();*/
+                ActivityCompat.finishAffinity(PortfolioActivity.this);
             }
         });
         builder.show();

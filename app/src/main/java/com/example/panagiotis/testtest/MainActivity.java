@@ -11,10 +11,15 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -34,6 +39,18 @@ public class MainActivity extends AppCompatActivity {
     protected static List<Stock> stocks = new ArrayList<>();
     private ListView stockListView;
 
+    private TextView symbolTextview;
+    private TextView openTextview;
+    private TextView highTextview;
+    private TextView lowTextview;
+    private TextView priceTextview;private TextView volumeTextview;private TextView lastestTrafingTextview;
+    private TextView prevCloseTextview;
+    private TextView changeTextview;
+    private TextView changePercTextview;
+    private Button backbutton;
+
+
+
 
 
 
@@ -44,10 +61,52 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         stockListView = findViewById(R.id.stockListView);
         StockAdapter stockAdapter = new StockAdapter(MainActivity.this,
                 R.layout.list_record, stocks);
         stockListView.setAdapter(stockAdapter);
+        stockListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                setContentView(R.layout.item_of_listview_details);
+                symbolTextview = findViewById(R.id.symboF);
+                openTextview = findViewById(R.id.open);
+                highTextview = findViewById(R.id.high);
+                lowTextview = findViewById(R.id.low);
+                priceTextview = findViewById(R.id.price);
+                volumeTextview = findViewById(R.id.volume);
+                lastestTrafingTextview = findViewById(R.id.latesttrading);
+                prevCloseTextview = findViewById(R.id.prevclose);
+                changeTextview = findViewById(R.id.change);
+                changePercTextview = findViewById(R.id.changeperc);
+                backbutton = findViewById(R.id.backbtn);
+
+
+                symbolTextview.setText(stocks.get(position).getSymbol());
+
+                openTextview.setText(stocks.get(position).getOpen());
+                highTextview.setText(stocks.get(position).getHigh());
+                lowTextview.setText(stocks.get(position).getLow());
+                priceTextview.setText(stocks.get(position).getLow());
+                volumeTextview.setText(stocks.get(position).getVolume());
+                lastestTrafingTextview.setText(stocks.get(position).getLatestTraidingDay());
+                prevCloseTextview.setText(stocks.get(position).getPreviousClose());
+                changeTextview.setText(stocks.get(position).getChange());
+                changePercTextview.setText(stocks.get(position).getChanePercent());
+
+                backbutton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                       recreate();
+                    }
+                });
+
+
+            }
+        });
 
         }
 
@@ -61,6 +120,17 @@ public class MainActivity extends AppCompatActivity {
 
         return  true;
 
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        return super.onContextItemSelected(item);
     }
 
     @Override

@@ -3,8 +3,10 @@ package com.example.panagiotis.testtest;
 
 import android.util.Log;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MyStock  {
 
@@ -59,9 +61,12 @@ public class MyStock  {
             for(Stock stock :stocks){
                 if (stock.getSymbol().equals(symbol)){
                     Log.d(TAG, "getGainOrLoss:" +stock.getPrice());
-                    float priceNow=Integer.parseInt(this.price);
-                    float priceWhenBuy = Float.valueOf(stock.getPrice());
-                    gainOrLoss= priceNow - priceWhenBuy;
+                    float priceNow=Float.valueOf(stock.getPrice());
+                    float priceWhenBuy = Float.valueOf( this.price);
+                    gainOrLoss= (priceNow*Integer.parseInt(numOfStocks) - priceWhenBuy*Integer.parseInt(numOfStocks));
+
+
+
 
                 }
             }
